@@ -13,24 +13,22 @@ A: 1 3 5 6 7
 
 */
 
+
 const BubbleSort = (arr) => {
 
-    let i = 0;
-    let j = i + 1;
+   
 
-    for (i = 0; i < n; i++) {
+    for (let  i = 0; i < n - 1; i++) {
 
-        for (j = i + 1; j < n - 1; j++) {
+        for ( let j = 0; j < n - i - 1; j++) {
 
-            if (arr[i] > arr[j]) {
+            if (arr[j] > arr[j + 1]){
 
-                let temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-                i = 0;
-                j = i + 1;
-                break;
+                [arr[j], arr[j + 1]]=[arr[j+1], arr[j]]
+
             }
+              
+        
 
         }
 
@@ -39,7 +37,7 @@ const BubbleSort = (arr) => {
 
 }
 
-let arr = [-8, 1, 8, 3, 2, 8]
+let arr = [ 1, 8, 3, 2, 8]
 let n = arr.length;
 
 console.log(BubbleSort(arr, n))
