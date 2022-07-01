@@ -30,19 +30,11 @@ function partition(arr, lo, hi) {
             j--;
            }
 
-
-
-
         if (i < j) {
             [arr[i], arr[j]] = [arr[j], arr[i]]
         }
-
     }
-
-
-
      [arr[j],arr[lo]]=[arr[lo],arr[j]]
-
 
   return j;
 
