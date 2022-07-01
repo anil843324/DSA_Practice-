@@ -27,14 +27,9 @@ const BubbleSort = (arr) => {
                 [arr[j], arr[j + 1]]=[arr[j+1], arr[j]]
 
             }
-              
-        
-
         }
-
     }
     return arr;
-
 }
 
 let arr = [ 1, 8, 3, 2, 8]
