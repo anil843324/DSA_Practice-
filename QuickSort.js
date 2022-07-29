@@ -94,8 +94,6 @@ const partition2=(arr,lo,hi)=>{
             [arr[i],arr[j]]=[arr[j],arr[i]];
          }
 
-       
-
       }
       [arr[j],arr[lo]]=[arr[lo],arr[j]];
 
@@ -121,7 +119,7 @@ const partition2=(arr,lo,hi)=>{
 
  }
    
- let arr2= [3,4,8,9];
+ let arr2= [5,7,1,2,9,10];
 
  console.log(quick2(arr2,0,arr2.length-1))
 
