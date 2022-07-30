@@ -1,31 +1,28 @@
-function maxProduct(arr,n){
+function maxProduct(arr, n) {
+  //code here
+  let ans = arr[0];
 
-    //code here
-     let max=Number.MIN_SAFE_INTEGER;
-    
-    for(let i=0;i<n;i++){
-        
-        let sum=1;
-        
-        for(let j=i;j<n;j++){
-            
-            sum=sum*arr[j];
-            
-            max=Math.max(sum,max);
-            
-        }
-        
-        
+  let ma = ans;
+  let mi = ans;
+
+  for (let i = 1; i < n; i++) {
+    if (arr[i] < 0) {
+      let temp = ma;
+      ma = mi;
+      mi = temp;
     }
-    
-    return max
       
-    
+    ma = Math.max(arr[i], ma * arr[i]);
+    mi = Math.min(arr[i], mi * arr[i]);
+    ans = Math.max(ans, ma);
+  }
+
+  return ans;
 }
 
-let arr=[6, -3, -10, 0, 2];
-let n=arr.length;
+let arr = [-8, 5, 3, 1, 6];
+let n = arr.length;
 
-let ans=maxProduct(arr,n)
+let ans = maxProduct(arr, n);
 
-console.log(ans)
+console.log(ans);
