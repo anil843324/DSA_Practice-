@@ -1,19 +1,21 @@
 function missingNumber(arr, n) {
   //your code here
 
-  arr.sort((a, b) => a - b);
+  let mp = new Map();
 
-  for (let i = 0; i < n-1; i++) {
-    if (arr[i] > 0) {
-      if (arr[i + 1] - arr[i] !== 1) {
-        return arr[i + 1] - arr[i];
-      }
+  for (let i = 0; i < n; i++) {
+    mp.set(arr[i], true);
+  }
+  console.log(mp);
+let i=1;
+  for (i = 1; i <= n; i++) {
+    if (!mp.has(i)) {
+      return i;
     }
   }
-
-  return arr[n - 1] + 1;
+  return i;
 }
 
-let ans = missingNumber([1, 2, 3, 4, 5], 5);
+let ans = missingNumber([1,2,3,4,5], 5);
 
 console.log(ans);
