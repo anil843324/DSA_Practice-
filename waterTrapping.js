@@ -36,7 +36,7 @@ let water=0;
     
   }
 
-   console.log(water)
+   return water;
 
 
 
