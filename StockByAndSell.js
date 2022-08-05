@@ -39,33 +39,15 @@ var maxProfit = function (A, n) {
     }
   }
 
- if(flag===0){
-
-
-     return ans;
- }else if (buy!==n-1 && sell===n-1){
-
-       let temp=[];
-        temp.push(buy)
-        temp.push(sell)
-        ans.push(temp);
- }
- return ans;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  if (flag === 0) {
+    return ans;
+  } else if (buy !== n - 1 && sell === n - 1) {
+    let temp = [];
+    temp.push(buy);
+    temp.push(sell);
+    ans.push(temp);
+  }
+  return ans;
 };
 
 let prices = [100, 180, 260, 310, 40, 535, 695];
