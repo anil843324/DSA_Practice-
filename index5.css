@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #32312f;
+  font-family: sans-serif;
+}
+
+.table-container {
+  padding: 0 10%;
+  margin: 40px auto 0;
+}
+.heading {
+  font-size: 40px;
+  text-align: center;
+  color: #f1f1f1;
+  margin-bottom: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background-color: #ee2828;
+}
+thead tr th {
+  font-size: 14px;
+  font-weight: medium;
+  letter-spacing: 0.35px;
+  color: #ffffff;
+  opacity: 1;
+  padding: 12px;
+  vertical-align: top;
+  border: 1px solid #dee2e685;
+}
+tbody tr td{
+
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.35px;
+    color: #f1f1f1;
+     text-align: center;
+    padding: 8px;
+     background-color: #3c3f44;
+    border: 1px solid #dee2e685;
+
+}
+
+/*  now responsive for mobile */
+
+ @media  (max-width:768px) {
+  
+     thead{
+         display: none;
+     }
+     tbody tr td{
+         display: block;
+         width: 100%;
+     }
+    
+     /*  now working but why i don't know */
+     table tr{
+        margin-bottom: 15px;
+        
+      }
+
+       tbody tr td{
+          text-align: right;
+          padding-left: 50%;
+          position: relative;
+       }
+       td:before{
+
+          content: attr(data-lavel);
+          position: absolute;
+          left: 0;
+          width: 50%;
+          padding-left: 15px;
+          font-weight: 600;
+          font-size: 14px;
+          text-align: left;
+
+       }
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
