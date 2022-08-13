@@ -2,7 +2,9 @@ function Reduced_String(k, s) {
   //code here
   let st = [];
   let ans = "";
-
+    if(k===1){
+      return ""
+    }
   for (let i = 0; i < s.length; i++) {
     if (st.length === 0) {
       st.push({ first: s[i], second: 1 });
