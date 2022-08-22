@@ -1,78 +1,50 @@
 function findSum(X, Y) {
   // code here
+  let res = "";
 
-  let ans = [];
-  let l1 = X.length;
-  let l2 = Y.length;
+  let i = X.length - 1;
+  let j = Y.length - 1;
+
   let carry = 0;
-  let i = l1 - 1;
-  let j = l2 - 1;
 
-  while (i >= 0 && j >= 0) {
-    let sum = Number(X[i]) + Number(Y[j]) + carry;
+  while (i >= 0 || j >= 0 || carry !== 0) {
+    let ival = i >= 0 ? Number(X[i]) : 0;
 
-    carry = Math.floor(sum / 10);
-    let rem = sum % 10;
-    ans.push(rem);
-
+    let jval = j >= 0 ? Number(Y[j]) : 0;
     i--;
     j--;
-  }
-  // if(carry){
-  //     ans.push(carry)
-  // }
-  if (i >= 0) {
-    while (i >= 0) {
-      if (carry > 0) {
-        let sum = Number(X[i]) + carry;
 
-        carry = Math.floor(sum / 10);
-        let rem = sum % 10;
-        ans.push(rem);
-        i--;
-      } else {
-        ans.push(Number(X[i]));
+    let sum = ival + jval + carry;
 
-        i--;
-      }
-    }
-  }else if (j>=0){
-    while (j >= 0) {
-        if (carry > 0) {
-          let sum = Number(Y[j]) + carry;
-  
-          carry = Math.floor(sum / 10);
-          let rem = sum % 10;
-          ans.push(rem);
-          j--;
-        } else {
-          ans.push(Number(Y[j]));
-  
-          j--;
-        }
-      }
+    res = (sum % 10) + res;
 
-
-
-  }else{
-    if(carry>0){
-        ans.push(carry)
-    }
-     
+    carry = Math.floor(sum / 10);
   }
 
+  let k = 0;
+  let ans=res.split("").map(Number)
+ 
+  while (k < res.length) {
+    if (ans[0] === 0) {
+        ans.shift();
+    }else{
+       break;
+    }
+
+    k++;
+  }
+ 
+   if(ans.length){
+     return ans.join("")
+   }else{
+    return 0;
+   }
 
 
 
-
-
-
-
-
-
-  console.log(ans.reverse().join(""));
 }
 
-let X = "00000";
-let Y = "0000000";
-findSum(X, Y);
+let X = "00";
+let Y = "0000";
+let res=findSum(X, Y);
+console.log(res)
