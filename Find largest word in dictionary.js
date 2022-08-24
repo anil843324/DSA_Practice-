@@ -1,44 +1,46 @@
-// function   findLongestWord(s, d){
-//     //code here
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-// }
-// let d = ["ale", "apple", "monkey", "plea"]
-// let  s = "abpcplea"
-// // Output: "apple" 
-//  let res= findLongestWord(s,d)
-
-//   console.log(res);
+let res = ''
+function findLongestWord(s, d) {
+  
+  //code here
+  d.sort();
+  for (let c of d) {
+    check(c, s);
+  }
+  return res;
 
 
+}
 
-
-
-  const check=(str)=>{
-
-       
-        str=str.split("-")
-       console.log(str)
+function check(d, s) {
+  let i = 0;
+  let j = 0;
+  while (i < d.length && j < s.length) {
+    if (d[i] === s[j]) {
+      i++;
+      j++;
+    }
+    else {
+      j++;
+    }
 
   }
+  if (i === d.length && res.length < d.length) {
+    res = d;
+  }
+}
 
-check("123-12-23")
+
+// Driver program
+let dict = ["ale", "apple", "monkey", "plea"];
+let str = "abpcplea";
+ console.log(findLongestWord(str,dict));
+
+
+
+
+
+
+
 
 
 
